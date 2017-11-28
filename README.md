@@ -5,5 +5,3 @@ This is my personal website.. I didn't totally make it from scratch because ain'
 Here is the template I used it is pretty nice.
 
 [Creative](http://startbootstrap.com/template-overviews/creative/) is a one page creative theme for [Bootstrap](http://getbootstrap.com/) created by [Start Bootstrap](http://startbootstrap.com/).
-
-Test travis ci trigger
