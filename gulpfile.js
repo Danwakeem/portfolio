@@ -7,6 +7,8 @@ var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 var babel = require('gulp-babel');
+var gzip = require('gulp-gzip');
+var htmlmin = require('gulp-htmlmin');
 var sourcemaps = require('gulp-sourcemaps');
 var pkg = require('./package.json');
 
@@ -23,9 +25,6 @@ var banner = ['/*!\n',
 gulp.task('sass', function() {
   return gulp.src('scss/creative.scss')
     .pipe(sass())
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
     .pipe(gulp.dest('css'))
     .pipe(browserSync.reload({
       stream: true
@@ -56,13 +55,25 @@ gulp.task('minify-js', function() {
     }))
     .pipe(concat('all.js'))
     .pipe(uglify())
-    .pipe(header(banner, {
-      pkg: pkg
-    }))
     .pipe(rename({
       suffix: '.min'
     }))
     .pipe(sourcemaps.write())
+    .pipe(gulp.dest('js'))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
+});
+
+gulp.task('minify-html', function() {
+  return gulp.src('html/*.html')
+    .pipe(htmlmin({collapseWhitespace: true}))
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('js-gzip', ['minify-js'], function () {
+  return gulp.src(['/js/all.min.js'])
+    .pipe(gzip())
     .pipe(gulp.dest('js'))
     .pipe(browserSync.reload({
       stream: true
@@ -104,24 +115,24 @@ gulp.task('copy', function() {
 })
 
 // Default task
-gulp.task('default', ['sass', 'minify-css', 'minify-js', 'copy']);
+gulp.task('default', ['sass', 'minify-css', 'minify-js', 'js-gzip', 'minify-html', 'copy']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
   browserSync.init({
     server: {
-      baseDir: ''
+      baseDir: '',
     },
   })
 })
 
 // Dev task with browserSync
-gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js'], function() {
+gulp.task('dev', ['browserSync', 'sass', 'minify-css', 'minify-js', 'js-gzip', 'minify-html'], function() {
   gulp.watch('scss/*.scss', ['sass']);
   gulp.watch('css/*.css', ['minify-css']);
   gulp.watch('js/**/*.js', ['minify-js']);
   gulp.watch('js/*.js', ['minify-js']);
   // Reloads the browser whenever HTML or JS files change
-  gulp.watch('*.html', browserSync.reload);
+  gulp.watch('html/*.html', ['minify-html']);
   gulp.watch('js/**/*.js', browserSync.reload);
 });
