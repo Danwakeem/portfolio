@@ -22,6 +22,7 @@ deploy:
     secure: AIEk7NUEHUPZHoA7foIQ0NIe9WV71d2zTzNWq8TVOF898X19bMnqMdC/SEDbGqL4KaHhei2nILl0oLVIKgiUo1pQsf4w1efT3tX34Q2kY+yzmwyNDiEI3OUWL7/xoKTHNkxvwDhLAD24YFyLkNOH9io4TtqkBKn71GqPQbqAFmGOxo4dI8Eedu6yCEl0abhQQMoKjOw+pyUetQQAuM48+c1x30yC+8waBCq2TuFLnBPMBY6JM+bxZ/6a/7K4buu3J6YHE3EsFq238vsKUGrbLOqpiqgfnUPR7yBqiZvYSJOKINBzUdIQGouP8ZUojXw8Ubigu6jBKeP7nkyh7FcPP54+5hhIZVjdSCSBtyHt2qDJvpaPOff4kNX796fdSiGg1rONUaaiTULU8S1nrf+28ut/wMj7CxykOuM3fnQ/SDvYxl7rXV0l7vFCBGoRLjP1oV4qpP1cmvxPJDCmM4C2c5cT+5HDHeS0g40ApMr67YDwmqvQ99U7eDObFJDI5QSbXnTrh7/rr3mm1gQiREmGiWOT5d5wWBFiL4jFS8dffuTTqaDjKtfI4gJ13imZU6dyxdBFgDuLTkoO6M759pmYM0dVCfuKuDh+3PAV19/ogJ2srVYVfrRa5B+h7wuaA59i+szDEY+5khacYhYtvIxq1J0wayTciVfJwi5e8/3Bdng=
   bucket: www.danwakeem.com
   acl: public_read
+  cache_control: "max-age=604800"
   skip_cleanup: true
   on:
     repo: Danwakeem/portfolio
