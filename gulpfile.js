@@ -58,7 +58,7 @@ gulp.task('minify-js', function() {
     .pipe(rename({
       suffix: '.min'
     }))
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('js/maps'))
     .pipe(gulp.dest('js'))
     .pipe(browserSync.reload({
       stream: true
