@@ -19,7 +19,7 @@ const HeadWrapper = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url('./header.jpg');
+  background-image: url('./header.webp');
   background-position: center center;
   background-repeat: no-repeat;
   background-size: cover;
