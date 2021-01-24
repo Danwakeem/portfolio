@@ -32,7 +32,7 @@ const SkillDescription = styled.p`
   text-align: center;
 `;
 
-const SkillTitle = styled.h4`
+const SkillTitle = styled.p`
   font-size: 1.75rem;
   font-weight: 300;
   margin-bottom: 1rem;

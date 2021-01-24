@@ -10,7 +10,7 @@ export const Github = () => {
     <Row padding='8rem' background={colors.darkBg}>
       <Title fontSize='2rem' fontWeight='300' color="white">{github.header}</Title>
       <a href={github.link} target="_blank" rel="noreferrer">
-        <StyledButton type="basic" shape="round" size='large'>
+        <StyledButton aria-label="Github page" type="basic" shape="round" size='large'>
           {github.subSection}
         </StyledButton>
       </a>

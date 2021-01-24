@@ -15,7 +15,7 @@ export const CTA = () => {
         <Divider color={colors.primary} spacing='20px' />
         <Subtitle marginBottom='2rem' color={colors.darkText}>{cta.subSection}</Subtitle>
         <a href={`mailto:${cta.email}`}>
-          <StyledButton type="primary" shape="round" icon={<Icon icon={cta.icon} />} size='large'>
+          <StyledButton aria-label="Contact Me" type="primary" shape="round" icon={<Icon icon={cta.icon} />} size='large'>
             {cta.email}
           </StyledButton>
         </a>

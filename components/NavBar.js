@@ -14,10 +14,10 @@ export const NavBar = () => {
   const { innerWidth } = windowSize;
 
   const actionButtons = [
-    <Link key="4" to="about" smooth={true} duration={500} offset={-80}><NavButtons ghost={scrollY < 100 && innerWidth > 740} type="text">About</NavButtons></Link>,
-    <Link key="3" to="skills" smooth={true} duration={500} offset={-80}><NavButtons ghost={scrollY < 100 && innerWidth > 740} type="text">Skills</NavButtons></Link>,
-    <Link key="2" to="projects" smooth={true} duration={500} offset={-80}><NavButtons ghost={scrollY < 100 && innerWidth > 740} type="text">Projects</NavButtons></Link>,
-    <Link key="1" to="contact" smooth={true} duration={500} offset={-80}><NavButtons ghost={scrollY < 100 && innerWidth > 740} type="text">Contact</NavButtons></Link>,
+    <Link key="4" to="about" smooth={true} duration={500} offset={-80}><NavButtons aria-label="About" ghost={scrollY < 100 && innerWidth > 740} type="text">About</NavButtons></Link>,
+    <Link key="3" to="skills" smooth={true} duration={500} offset={-80}><NavButtons aria-label="Skills" ghost={scrollY < 100 && innerWidth > 740} type="text">Skills</NavButtons></Link>,
+    <Link key="2" to="projects" smooth={true} duration={500} offset={-80}><NavButtons aria-label="Projects" ghost={scrollY < 100 && innerWidth > 740} type="text">Projects</NavButtons></Link>,
+    <Link key="1" to="contact" smooth={true} duration={500} offset={-80}><NavButtons aria-label="Contact" ghost={scrollY < 100 && innerWidth > 740} type="text">Contact</NavButtons></Link>,
   ];
 
   const menu = (
@@ -30,7 +30,7 @@ export const NavBar = () => {
 
   const dropdown = [
     <Dropdown key="more" overlay={menu}>
-      <Button style={{background: 'none', border: 'none'}}>
+      <Button aria-label="Menu" style={{background: 'none', border: 'none'}}>
         <Icon ghost={scrollY < 100} icon={faChevronCircleDown} />
       </Button>
     </Dropdown>

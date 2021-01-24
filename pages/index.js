@@ -32,7 +32,6 @@ export default function Home() {
         <meta name="og:description" content="Danwakeem's online portfolio. Check it out." />
         <title>Danwakeem | Creative</title>
         <link rel="icon" href="/favicon.ico" />
-        <link rel="preconnect" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap" />
       </Head>
 
       <NavBar />
