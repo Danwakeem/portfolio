@@ -1,76 +1,46 @@
-import React, { useEffect } from 'react';
-import Head from 'next/head'
-import { PageHeader, Button } from 'antd';
-import styled from 'styled-components';
-import { useScrollYPosition } from 'react-use-scroll-position';
+import React from 'react';
+import Head from 'next/head';
+import ReactGA from 'react-ga';
+ReactGA.initialize('UA-37409930-1');
 
+import { NavBar } from './../components/NavBar';
 import { Header } from './../components/Header';
 import { About } from './../components/About';
-import { colors } from '../styles/colors';
 import { Skills } from '../components/Skills';
+import { Projects } from '../components/Projects';
+import { Github } from '../components/Github';
+import { CTA } from '../components/Cta';
 
 export default function Home() {
-  const scrollY = useScrollYPosition();
-
   return (
     <>
       <Head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Danwakeem's online portfolio. Check it out." />
+        <meta name="author" content="Danwakeem" />
+        <meta name="description" content="DanWakeem Portfolio" />
+        <meta name="author" content="DanWakeem" />
+        <meta name="twitter:card" content="photo" />
+        <meta name="twitter:site" content="@danwakeem" />
+        <meta name="twitter:creator" content="@danwakeem" />
+        <meta name="twitter:description" content="Danwakeem's online portfolio. Check it out." />
+        <meta property="og:title" content="Danwakeem.com" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://www.danwakeem.com/" />
+        <meta property="og:image" content="banner.jpg" />
+        <meta name="og:description" content="Danwakeem's online portfolio. Check it out." />
         <title>Danwakeem | Creative</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavBar
-        title="Danwakeem"
-        ghost={scrollY < 100}
-        extra={[
-          <NavButtons ghost={scrollY < 100} key="4" type="text">About</NavButtons>,
-          <NavButtons ghost={scrollY < 100} key="3" type="text">Skills</NavButtons>,
-          <NavButtons ghost={scrollY < 100} key="2" type="text">Portfolio</NavButtons>,
-          <NavButtons ghost={scrollY < 100} key="1" type="text">Contact</NavButtons>,
-        ]}
-      />
+      <NavBar />
       <Header />
       <About />
       <Skills />
+      <Projects />
+      <Github />
+      <CTA />
     </>
   )
 }
-
-const NavButtons = styled(Button)`
-  font-weight: 700;
-  text-transform: uppercase;
-  ${props => {
-    if (props.ghost) {
-      return `
-        color: ${colors.fadedText};
-      
-        &:hover {
-          color: rgba(183,183,183,.7);
-        }
-      `;
-    }
-  }}
-`;
-
-const NavBar = styled(PageHeader)`
-  position: fixed;
-  width: 100%;
-  padding: 10px 200px;
-  ${props => {
-    if (props.ghost) {
-      return `    
-        .ant-page-header-heading-title {
-          text-transform: uppercase;
-          color: ${colors.fadedText};
-        }
-      `;
-    } else {
-      return `
-        .ant-page-header-heading-title {
-          text-transform: uppercase;
-          color: ${colors.primary};
-        }
-      `;
-    }
-  }}
-`;

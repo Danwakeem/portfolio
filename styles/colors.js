@@ -3,4 +3,5 @@ export const colors = {
   defaultText: '#212529',
   darkText: '#868e96',
   fadedText: 'rgba(255,255,255,.7)',
+  darkBg: '#212529',
 }

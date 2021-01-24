@@ -17,3 +17,16 @@ a {
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   box-sizing: border-box;
 }
+
+.ant-modal-root .ant-modal-content {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.ant-modal-root .ant-modal-content .ant-modal-close {
+  top: -15px;
+}
+
+.ant-modal-footer {
+  display: none;
+}

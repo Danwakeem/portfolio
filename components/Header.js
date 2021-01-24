@@ -1,13 +1,15 @@
 import styled from "styled-components";
 import { Divider, Title, Subtitle } from './Utils';
 import { colors } from './../styles/colors';
+import { data } from './../data/data';
+const { header } = data;
 
 export const Header = () => {
   return (
     <HeadWrapper>
-      <Title color="white" upperCase={true} fontSize="4rem">Danwakeem</Title>
+      <Title color="white" upperCase={true} fontSize="4rem">{header.header}</Title>
       <Divider color={colors.primary} />
-      <Subtitle marginBottom="3rem">Developer X Creative</Subtitle>
+      <Subtitle marginBottom="3rem">{header.subSection}</Subtitle>
     </HeadWrapper>
   );
 };
