@@ -9,7 +9,7 @@ import { About } from './../components/About';
 import { Skills } from '../components/Skills';
 import { Projects } from '../components/Projects';
 import { Github } from '../components/Github';
-import { CTA } from '../components/Cta';
+import { CTA } from '../components/CTA';
 
 export default function Home() {
   return (
