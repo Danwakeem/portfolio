@@ -7,7 +7,7 @@ const { header } = data;
 export const Header = () => {
   return (
     <HeadWrapper>
-      <Title color="white" upperCase={true} fontSize="4rem">{header.header}</Title>
+      <Title color="white" upperCase={true} fontSize="3.5rem">{header.header}</Title>
       <Divider color={colors.primary} />
       <Subtitle marginBottom="3rem">{header.subSection}</Subtitle>
     </HeadWrapper>
